@@ -1,0 +1,38 @@
+header {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: #282c34;
+    padding: 20px;
+    color: white;
+    text-align: center;
+}
+
+.mt-header {
+    &__nav {
+        display: flex;
+        justify-content: space-around;
+        width: 100%;
+        & a {
+            position: relative;
+            color: white;
+            text-decoration: none;
+            transition: all 0.15s ease-in;
+            &:hover::after {
+                width: 100%;
+                transition: all 0.15s ease-in;
+            }
+            &::after {
+                transition: all 0.15s ease-in;
+                content: "";
+                position: absolute;
+                bottom: 0;
+                left: 0;
+                width: 0;
+                height: 2px;
+                background: white;
+
+            }
+        }
+    }
+}
