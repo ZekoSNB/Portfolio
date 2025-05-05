@@ -1,15 +1,17 @@
 import { Input, Button, VStack } from "@chakra-ui/react";
-import { InputRequest } from "../utils/InputRequest";
+import { GetInputRequest } from "../utils/InputRequest";
 import { useState } from "react";
 
 
-export function Password() {
+export function Password({setter}: {setter: React.Dispatch<React.SetStateAction<string | undefined>>}) {
     const [value, setValue] = useState<string | undefined>(undefined);
 
     const onSubmit = (e: React.FormEvent<HTMLFormElement>) => {
         e.preventDefault();
         if (!value) return;
-        InputRequest(value);
+        GetInputRequest(value).then((message) => {
+            setter(message);
+        });
     }
 
     return (
