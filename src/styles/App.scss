@@ -8,11 +8,16 @@ header {
     text-align: center;
 }
 
+* {
+    user-select: none;
+}
+
 svg {
     color: white;
 }
 
 .social-icon {
+    user-select: none;
     transition: all 0.3s cubic-bezier(0.075, 0.82, 0.165, 1);
     &:hover {
         transform: translateY(-7px) scale(1.05);

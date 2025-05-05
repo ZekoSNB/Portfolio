@@ -8,11 +8,20 @@ header {
   text-align: center;
 }
 
+* {
+  -webkit-user-select: none;
+     -moz-user-select: none;
+          user-select: none;
+}
+
 svg {
   color: white;
 }
 
 .social-icon {
+  -webkit-user-select: none;
+     -moz-user-select: none;
+          user-select: none;
   transition: all 0.3s cubic-bezier(0.075, 0.82, 0.165, 1);
 }
 .social-icon:hover {

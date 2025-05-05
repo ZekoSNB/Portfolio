@@ -37,7 +37,6 @@ function App() {
     window.addEventListener("blur", handleBlur);
     window.addEventListener("focus", handleFocus);
 
-    // Cleanup on unmount
     return () => {
       window.removeEventListener("blur", handleBlur);
       window.removeEventListener("focus", handleFocus);
@@ -66,9 +65,6 @@ function App() {
             <a href="https://instagram.com/_ozeko" target="_blank" rel="noopener noreferrer">
               <FaInstagram className='social-icon' color="white" size={48} />
             </a>
-            {/* <a href="https://www.facebook.com/MarosSNB/" target="_blank" rel="noopener noreferrer">
-              <FaFacebook color="white" size={48} />
-            </a> */}
             <a href="https://www.linkedin.com/in/maro%C5%A1-toma%C5%A1ov/" target="_blank" rel="noopener noreferrer">
               <FaLinkedin className='social-icon' color="white" size={48} />
             </a>
