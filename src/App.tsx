@@ -1,9 +1,51 @@
 import './styles/App.css'
+import { useEffect } from 'react'
 import { Text, Box, Heading} from '@chakra-ui/react'
 import { FaInstagram, FaLinkedin, FaYoutube, FaGithub } from 'react-icons/fa'
 import { CursorTrail } from './components/CursorTrail'
 
 function App() {
+    useEffect(() => {
+    const originalTitle = document.title;
+    const blurMessages = [
+      "DŠ <3",
+      "Silence is golden",
+      "GVBN </3",
+      "Does god exist?",
+    ];
+
+    let intervalTimer: number | undefined = undefined;
+    let timeoutTimer: number | undefined = undefined;
+
+    const handleBlur = () => {
+      intervalTimer = setInterval(() => {
+        const randomIndex = Math.floor(Math.random() * blurMessages.length);
+        document.title = blurMessages[randomIndex];
+
+        timeoutTimer = setTimeout(() => {
+          document.title = originalTitle;
+        }, 4000);
+      }, 12000);
+    };
+
+    const handleFocus = () => {
+      clearInterval(intervalTimer);
+      clearTimeout(timeoutTimer);
+      document.title = originalTitle;
+    };
+
+    window.addEventListener("blur", handleBlur);
+    window.addEventListener("focus", handleFocus);
+
+    // Cleanup on unmount
+    return () => {
+      window.removeEventListener("blur", handleBlur);
+      window.removeEventListener("focus", handleFocus);
+      clearInterval(intervalTimer);
+      clearTimeout(timeoutTimer);
+      document.title = originalTitle;
+    };
+  }, []);
 
   return (
     <>
