@@ -19,6 +19,12 @@ svg {
     }
 }
 
+@media screen and (max-width: 768px) {
+    .cursor-trail {
+        display: none;
+    }
+}
+
 .mt-header {
     &__nav {
         display: flex;

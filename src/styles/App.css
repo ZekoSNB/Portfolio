@@ -19,6 +19,11 @@ svg {
   transform: translateY(-7px) scale(1.05);
 }
 
+@media screen and (max-width: 768px) {
+  .cursor-trail {
+    display: none;
+  }
+}
 .mt-header__nav {
   display: flex;
   justify-content: space-around;

@@ -32,6 +32,7 @@ export const CursorTrail: React.FC = () => {
 
   return (
     <motion.div
+      className="cursor-trail"
       style={{
         ...style,
         translateX: springX,
