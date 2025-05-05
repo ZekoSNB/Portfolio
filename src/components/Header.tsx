@@ -1,5 +1,4 @@
-import React from 'react';
-import { Link, List } from '@chakra-ui/react';
+import { Link } from '@chakra-ui/react';
 
 
 export function Header() {
