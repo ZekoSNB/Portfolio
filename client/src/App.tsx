@@ -16,8 +16,8 @@ function App() {
       <CursorTrail />
       <section style={{ backgroundColor: 'black', padding: '20px', display: 'flex', height: '100dvh', alignItems: 'center', justifyContent: 'center', flexDirection: 'column' }}>
         <Text textAlign={"left"} fontSize={{
-          base: "2xl",
-          md: "4xl"
+          base: "l",
+          md: "2xl"
         }} color={"white"} fontWeight={600}>{hiddenValue ? hiddenValue : null}</Text>
         <Heading as={"h1"} textAlign={"center"} color={'white'} size={{
           base: "4xl",

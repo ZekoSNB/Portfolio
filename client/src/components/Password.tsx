@@ -8,7 +8,10 @@ export function Password({setter}: {setter: React.Dispatch<React.SetStateAction<
 
     const onSubmit = (e: React.FormEvent<HTMLFormElement>) => {
         e.preventDefault();
-        if (!value) return;
+        if (!value) {
+            setter("Nech si sa snažil, nič tam nie je");
+            return;
+        }
         GetInputRequest(value).then((message) => {
             setter(message);
         });

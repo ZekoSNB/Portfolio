@@ -2,8 +2,8 @@ export function GetInputRequest(password: string): Promise<string> {
     password = password
         .normalize("NFD")
         .replace(/[\u0300-\u036f]/g, "") // replace diacritics with normal character
-        .replace(/[^a-zA-Z0-9]/g, "");   // remove spaces and symbols
-  
+        .replace(/ /g, "");  
+    console.log(password)
     const url = "http://localhost:3000/api/" + password.toLowerCase();
     return fetch(url, {
         method: "GET",
