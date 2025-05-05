@@ -30,6 +30,16 @@ svg {
     }
 }
 
+.react-activity-calendar__calendar {
+    height: 9vw !important;
+}
+
+.github-calendar {
+    & div {
+        color: white !important;
+    }
+}
+
 .mt-header {
     &__nav {
         display: flex;

@@ -33,6 +33,14 @@ svg {
     display: none;
   }
 }
+.react-activity-calendar__calendar {
+  height: 9vw !important;
+}
+
+.github-calendar div {
+  color: white !important;
+}
+
 .mt-header__nav {
   display: flex;
   justify-content: space-around;
