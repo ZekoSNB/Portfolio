@@ -8,6 +8,10 @@ header {
   text-align: center;
 }
 
+svg {
+  color: white;
+}
+
 .mt-header__nav {
   display: flex;
   justify-content: space-around;
