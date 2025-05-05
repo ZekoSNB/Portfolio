@@ -12,6 +12,13 @@ svg {
   color: white;
 }
 
+.social-icon {
+  transition: all 0.3s cubic-bezier(0.075, 0.82, 0.165, 1);
+}
+.social-icon:hover {
+  transform: translateY(-7px) scale(1.05);
+}
+
 .mt-header__nav {
   display: flex;
   justify-content: space-around;
