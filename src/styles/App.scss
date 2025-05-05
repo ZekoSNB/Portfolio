@@ -31,15 +31,11 @@ svg {
     }
 }
 
-@media screen and (max-width: 768px) {
-    .cursor-trail {
-        display: none;
-    }
-}
-
 .react-activity-calendar__calendar {
     height: 9vw !important;
 }
+
+
 
 .github-calendar {
     & div {
@@ -73,5 +69,17 @@ svg {
 
             }
         }
+    }
+}
+
+
+// RESPONSIVE STYLES
+
+@media screen and (max-width: 768px) {
+    .cursor-trail {
+        display: none;
+    }
+    .github-calendar {
+        display: none;
     }
 }

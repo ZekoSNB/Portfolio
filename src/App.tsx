@@ -3,6 +3,7 @@ import { Title } from './utils/Title';
 import { Text, Box, Heading} from '@chakra-ui/react'
 import { FaInstagram, FaLinkedin, FaYoutube, FaGithub } from 'react-icons/fa'
 import { CursorTrail } from './components/CursorTrail'
+import { GithubCalendarComp } from './components/GithubCalendar';
 
 function App() {
   Title();
@@ -47,6 +48,7 @@ function App() {
               <img className='social-icon' src="/tiktok.svg" alt='spotify' width={48} height={48} />
             </a>
         </Box>
+        <GithubCalendarComp />
       </section>
     </>
   )

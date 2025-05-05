@@ -34,11 +34,6 @@ svg {
   transform: translateY(-7px) scale(1.05);
 }
 
-@media screen and (max-width: 768px) {
-  .cursor-trail {
-    display: none;
-  }
-}
 .react-activity-calendar__calendar {
   height: 9vw !important;
 }
@@ -71,4 +66,13 @@ svg {
   width: 0;
   height: 2px;
   background: white;
+}
+
+@media screen and (max-width: 768px) {
+  .cursor-trail {
+    display: none;
+  }
+  .github-calendar {
+    display: none;
+  }
 }/*# sourceMappingURL=App.css.map */
