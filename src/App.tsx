@@ -8,9 +8,18 @@ function App() {
   return (
     <>
       <section style={{ backgroundColor: 'black', padding: '20px', display: 'flex', height: '100vh', alignItems: 'center', justifyContent: 'center', flexDirection: 'column' }}>
-        <Heading as={"h1"} color={'white'} size={"5xl"}>MAROŠ TOMAŠOV</Heading>
-        <Text textAlign={"center"} fontSize="2xl" color={"white"} fontWeight={600}>To som ja! Len finančne negramotný človek.</Text>
-        <Box display={"grid"} gridTemplateColumns={"repeat(7, 1fr)"} alignItems={"center"} justifyContent={"center"} mt={4} columnGap={4} rowGap={4}>
+        <Heading as={"h1"} textAlign={"center"} color={'white'} size={{
+          base: "4xl",
+          md: "6xl",
+        }}>MAROŠ TOMAŠOV</Heading>
+        <Text textAlign={"center"} fontSize={{
+          base: "xl",
+          md: "3xl"
+        }} color={"white"} fontWeight={600}>To som ja! Len finančne negramotný človek.</Text>
+        <Box display={"grid"} gridTemplateColumns={{
+          base: "repeat(4, 1fr)",
+          md: "repeat(8, 1fr)",
+        }} alignItems={"center"} justifyContent={"center"} mt={4} columnGap={4} rowGap={8}>
             <a href="https://instagram.com/_ozeko" target="_blank" rel="noopener noreferrer">
               <FaInstagram color="white" size={48} />
             </a>
@@ -34,6 +43,9 @@ function App() {
             </a>
             <a href="https://open.spotify.com/user/maros384?si=b00cd58cd5ee4232" target="_blank" rel="noopener noreferrer">
               <img src="/spotify.svg" alt='spotify' width={48} height={48} />
+            </a>
+            <a href="https://www.tiktok.com/@_ozeko" target="_blank" rel="noopener noreferrer">
+              <img src="/tiktok.svg" alt='spotify' width={48} height={48} />
             </a>
         </Box>
       </section>
