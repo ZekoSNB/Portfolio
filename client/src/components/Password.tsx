@@ -13,6 +13,10 @@ export function Password({setter}: {setter: React.Dispatch<React.SetStateAction<
             return;
         }
         GetInputRequest(value).then((message) => {
+            if (!message) {
+                setter("Ideš na to rýchlo, skús to pomalšie :)");
+                return;
+            }
             setter(message);
         });
     }
