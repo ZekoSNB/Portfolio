@@ -32,9 +32,8 @@ svg {
 }
 
 .react-activity-calendar__calendar {
-    height: 9vw !important;
+    height: 7vw !important;
 }
-
 
 
 .github-calendar {
@@ -80,6 +79,9 @@ svg {
         display: none;
     }
     .github-calendar {
+        display: none;
+    }
+    .calendar__heading {
         display: none;
     }
 }

@@ -48,6 +48,10 @@ function App() {
               <img className='social-icon' src="/tiktok.svg" alt='spotify' width={48} height={48} />
             </a>
         </Box>
+        <Heading className='calendar__heading' as={"h2"} mt={8} mb={0.5} textAlign={"center"} color={'white'} size={{
+          base: "xl",
+          md: "2xl",
+        }}>GitHub Contributions</Heading>
         <GithubCalendarComp />
       </section>
     </>
