@@ -68,6 +68,22 @@ svg {
   background: white;
 }
 
+.secret__wrapper {
+  position: fixed;
+  bottom: 50px;
+  right: 50px;
+}
+.secret__input {
+  color: white;
+  width: 430px;
+}
+.secret__button {
+  color: white;
+}
+.secret__button:hover {
+  color: black;
+}
+
 @media screen and (max-width: 768px) {
   .cursor-trail {
     display: none;

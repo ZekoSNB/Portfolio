@@ -1,25 +1,9 @@
-import './styles/App.css'
-import { Title } from './utils/Title';
-import { Text, Box, Heading} from '@chakra-ui/react'
-import { FaInstagram, FaLinkedin, FaYoutube, FaGithub } from 'react-icons/fa'
-import { CursorTrail } from './components/CursorTrail'
-import { GithubCalendarComp } from './components/GithubCalendar';
+import { FaInstagram, FaLinkedin, FaYoutube, FaGithub } from 'react-icons/fa';
+import { Box } from '@chakra-ui/react';
 
-function App() {
-  Title();
+export function Navigation() {
   return (
-    <>
-      <CursorTrail />
-      <section style={{ backgroundColor: 'black', padding: '20px', display: 'flex', height: '100dvh', alignItems: 'center', justifyContent: 'center', flexDirection: 'column' }}>
-        <Heading as={"h1"} textAlign={"center"} color={'white'} size={{
-          base: "4xl",
-          md: "6xl",
-        }}>MAROŠ TOMAŠOV</Heading>
-        <Text textAlign={"center"} fontSize={{
-          base: "xl",
-          md: "3xl"
-        }} color={"white"} fontWeight={600}>To som ja! Len finančne negramotný človek.</Text>
-        <Box display={"grid"} gridTemplateColumns={{
+     <Box display={"grid"} gridTemplateColumns={{
           base: "repeat(4, 1fr)",
           md: "repeat(8, 1fr)",
         }} alignItems={"center"} justifyContent={"center"} mt={4} columnGap={4} rowGap={8}>
@@ -47,16 +31,6 @@ function App() {
             <a href="https://www.tiktok.com/@_ozeko" target="_blank" rel="noopener noreferrer">
               <img className='social-icon' src="/tiktok.svg" alt='spotify' width={48} height={48} />
             </a>
-        </Box>
-        <Heading className='calendar__heading' as={"h2"} mt={8} mb={0.5} textAlign={"center"} color={'white'} size={{
-          base: "xl",
-          md: "2xl",
-        }}>GitHub Contributions</Heading>
-        <GithubCalendarComp />
-      </section>
-    </>
+    </Box>
   )
 }
-
-export default App;
-
