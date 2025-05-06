@@ -3,7 +3,7 @@ export function GetInputRequest(password: string): Promise<string> {
         .normalize("NFD")
         .replace(/[\u0300-\u036f]/g, "") 
         .replace(/ /g, "");  
-    const url = "http://localhost:3000/api/" + password.toLowerCase();
+    const url = "http://localhost:4000/api/" + password.toLowerCase();
     return fetch(url, {
         method: "GET",
         headers: {
