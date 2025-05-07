@@ -3,7 +3,7 @@
     "concurrently": "^9.1.2"
   },
   "scripts": {
-    "start:fe": "cd client && npm run dev",
+    "start:fe": "cd client && npm run dev -- --host",
     "start:be": "cd server && npm run dev",
     "dev": "concurrently \"npm run start:fe\" \"npm run start:be\""
   }

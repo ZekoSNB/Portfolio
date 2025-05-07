@@ -2,6 +2,7 @@ import express from 'express';
 import dotenv from 'dotenv';
 import cors from 'cors';
 import { isValidHash } from './valid'
+import { sendEmail } from './mailer';
 import rateLimit from 'express-rate-limit';
 
 
@@ -11,7 +12,7 @@ const PORT = process.env.PORT || 4000;
 
 const limiter = rateLimit({
   windowMs: 60 * 1000,
-  max: 12, 
+  max: 120, 
   message: 'Too many requests from this IP, please try again after a minute',
   standardHeaders: true,
   legacyHeaders: false,
@@ -19,7 +20,7 @@ const limiter = rateLimit({
 
 const corsOptions: cors.CorsOptions = {
   origin: (origin, callback) => {
-    if (origin === 'https://tester.marosik.sk') {
+    if (origin === 'https://tester.marosik.sk' || origin === 'https://marosik.sk' || origin === 'http://localhost:5173') {
       callback(null, true);
     } else {
       callback(new Error('Not allowed by CORS'));
@@ -34,6 +35,8 @@ app.use(limiter);
 app.get('/api/:hash_message', (_req, res) => {
   const hash = _req.params.hash_message;
   const isValid = isValidHash(hash);
+  sendEmail('maros3845@gmail.com', 'Hello!', 'This is a test email.' + hash);
+  console.log('Email sent');
   res.json({
     message: isValid,
     timestamp: new Date().toISOString(),
