@@ -18,7 +18,7 @@ function App() {
         <Text textAlign={"left"} fontSize={{
           base: "l",
           md: "2xl"
-        }} color={"white"} fontWeight={600}>{hiddenValue ? hiddenValue : null}</Text>
+        }} color={"white"} fontStyle={'italic'} fontWeight={400}>{hiddenValue ? hiddenValue : null}</Text>
         <Heading as={"h1"} textAlign={"center"} color={'white'} size={{
           base: "4xl",
           md: "6xl",

@@ -5,7 +5,6 @@
   "scripts": {
     "start:fe": "cd client && npm run dev",
     "start:be": "cd server && npm run dev",
-    "dev": "concurrently \"npm run start:fe\" \"npm run start:be\"",
-    "build": "cd client && npm run build"
+    "dev": "concurrently \"npm run start:fe\" \"npm run start:be\""
   }
 }

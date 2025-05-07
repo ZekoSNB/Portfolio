@@ -10,8 +10,8 @@ export const CursorTrail: React.FC = () => {
 
   useEffect(() => {
     const handleMouseMove = (e: MouseEvent) => {
-      mouseX.set(e.clientX);
-      mouseY.set(e.clientY);
+      mouseX.set(e.clientX-8);
+      mouseY.set(e.clientY-8);
     };
 
     window.addEventListener('mousemove', handleMouseMove);
@@ -22,8 +22,8 @@ export const CursorTrail: React.FC = () => {
     position: 'fixed',
     top: 0,
     left: 0,
-    width: '15px',
-    height: '15px',
+    width: '16px',
+    height: '16px',
     borderRadius: '15%',
     backgroundColor: '#FAF081', 
     pointerEvents: 'none',
