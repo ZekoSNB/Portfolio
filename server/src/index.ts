@@ -20,7 +20,7 @@ const limiter = rateLimit({
 
 const corsOptions: cors.CorsOptions = {
   origin: (origin, callback) => {
-    if (origin === 'https://tester.marosik.sk' || origin === 'https://marosik.sk' || origin === 'http://localhost:5173') {
+    if (origin === 'https://tester.marosik.sk') {
       callback(null, true);
     } else {
       callback(new Error('Not allowed by CORS'));
