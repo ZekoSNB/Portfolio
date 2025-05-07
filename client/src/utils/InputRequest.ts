@@ -1,4 +1,3 @@
-import messages from '../data/messages.json';
 
 export function GetInputRequest(password: string): Promise<string> {
     password = password
@@ -6,12 +5,7 @@ export function GetInputRequest(password: string): Promise<string> {
         .replace(/[\u0300-\u036f]/g, "") 
         .replace(/ /g, "")
         .toLowerCase();
-    console.log(password)
-    const localmessages = messages as Record<string, string>;
-    if (password in localmessages) {
-        return Promise.resolve(localmessages[password]);
-    }
-    const url = "http://localhost:4000/api/" + password.toLowerCase();
+    const url = "https://portfolio-kpyg.onrender.com/api/" + password;
     return fetch(url, {
         method: "GET",
         headers: {
