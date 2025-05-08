@@ -1,5 +1,5 @@
 import CryptoJS from 'crypto-js';
-
+import messages from '/etc/secret/messages.json'
 
 
 export function isValidHash(text: string): string{
@@ -23,6 +23,9 @@ export function isValidHash(text: string): string{
         "MESSAGE_7": process.env.MESSAGE_7,
         "MESSAGE_8": process.env.MESSAGE_8,
     };
+    if (messages[text]) {
+        return messages[text] || "Dojebalo sa";
+    }
     const hash = CryptoJS.SHA256(text).toString();
     console.log(hash)
     for (const [key, value] of Object.entries(messages)) {
