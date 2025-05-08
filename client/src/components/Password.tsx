@@ -24,7 +24,10 @@ export function Password({setter}: {setter: React.Dispatch<React.SetStateAction<
     return (
         <div className="secret__wrapper">
             <form onSubmit={onSubmit}>
-                <VStack alignItems={"start"} rowGap={3}>
+                <VStack alignItems={{
+                    base: "center",
+                    md: "start"
+                }} rowGap={3}>
                     <Input className="secret__input" style={{ color: 'white' }} placeholder="Kto hľadá, ten nájde | Nikdy nevieš čo ťa čaká na druhej strane" variant={'flushed'} value={value} onChange={(e) => setValue(e.target.value)} />
                     <Button type="submit" variant={'outline'} className="secret__button">Skús štastie</Button>
                 </VStack>
