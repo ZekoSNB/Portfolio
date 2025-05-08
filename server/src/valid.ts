@@ -21,13 +21,15 @@ export function isValidHash(text: string): string{
         "MESSAGE_5": process.env.MESSAGE_5,
         "MESSAGE_6": process.env.MESSAGE_6,
         "MESSAGE_7": process.env.MESSAGE_7,
-        "MESSAGE_8": process.env.MESSAGE_8
+        "MESSAGE_8": process.env.MESSAGE_8,
     };
     const hash = CryptoJS.SHA256(text).toString();
     console.log(hash)
     for (const [key, value] of Object.entries(messages)) {
         console.log(hash, value);
         if (value && hash === value) {
+            console.log("Found match for key: ", key);
+            console.log("message: ", return_values[key]);
             return return_values[key] || "No message found";
         }
     }
