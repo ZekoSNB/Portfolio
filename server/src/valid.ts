@@ -1,5 +1,5 @@
 import CryptoJS from 'crypto-js';
-import invmessages from '/etc/messages.json';
+import invmessages from '/etc/secrets/messages.json';
 
 
 export function isValidHash(text: string): string{
