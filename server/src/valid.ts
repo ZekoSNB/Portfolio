@@ -24,6 +24,7 @@ export function isValidHash(text: string): string{
         "MESSAGE_8": process.env.MESSAGE_8
     };
     const hash = CryptoJS.SHA256(text).toString();
+    console.log(hash)
     for (const [key, value] of Object.entries(messages)) {
         if (value && hash === value) {
             return return_values[key] || "No message found";
