@@ -5,8 +5,8 @@ export function GetInputRequest(password: string): Promise<string> {
         .replace(/[\u0300-\u036f]/g, "") 
         .replace(/ /g, "")
         .toLowerCase();
-    console.log(password)
-    const url = "https://portfolio-kpyg.onrender.com/api/" + password;
+    
+    const url = "https://portfolio-kpyg.onrender.com/api/" + encodeURIComponent(password);
     return fetch(url, {
         method: "GET",
         headers: {
