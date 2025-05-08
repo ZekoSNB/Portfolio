@@ -1,12 +1,12 @@
 import express from 'express';
 import dotenv from 'dotenv';
+dotenv.config();
 import cors from 'cors';
 import { isValidHash } from './valid'
 import { sendEmail } from './mailer';
 import rateLimit from 'express-rate-limit';
 
 
-dotenv.config();
 const app = express();
 const PORT = process.env.PORT || 4000;
 
