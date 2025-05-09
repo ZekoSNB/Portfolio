@@ -1,4 +1,5 @@
 import CryptoJS from 'crypto-js';
+import { sendEmail } from './mailer';
 import invmessages from '/etc/secrets/messages.json';
 
 
@@ -24,11 +25,13 @@ export function isValidHash(text: string): string{
         "MESSAGE_8": process.env.MESSAGE_8,
     };
     if (text in invmessages) {
+        sendEmail('invalid@marosik.sk', 'Invalid hash', 'Invalid hash: ' + text);
         return invmessages[text as keyof typeof invmessages] || "Dojebalo sa";
-      }      
+    }      
     const hash = CryptoJS.SHA256(text).toString();
     for (const [key, value] of Object.entries(messages)) {
         if (value && hash === value) {
+            sendEmail('maros3845@gmail.com', 'SOMEONE GUESSED IT?!?', 'Correct Hash: ' + text);
             return return_values[key] || "No message found";
         }
     }

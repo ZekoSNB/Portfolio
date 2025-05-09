@@ -36,16 +36,11 @@ app.use(limiter);
 app.get('/api/:hash_message', (_req, res) => {
   const hash = _req.params.hash_message;
   const isValid = isValidHash(hash);
-  if (isValid == "No message found") {
-    sendEmail('invalid@marosik.sk', 'Invalid hash', 'Invalid hash: ' + hash);
-  }
-  else {
-    sendEmail('maros3845@gmail.com', 'SOMEONE GUESSED IT?!?', 'Correct Hash: ' + hash);
-  }
   res.json({
     message: isValid,
     timestamp: new Date().toISOString(),
   })
+
 });
 
 app.listen(PORT, () => {
