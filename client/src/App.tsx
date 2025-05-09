@@ -26,7 +26,7 @@ function App() {
         <Text textAlign={"center"} fontSize={{
           base: "xl",
           md: "3xl"
-        }} color={"white"} fontWeight={600}>To som ja! Len finančne negramotný človek.</Text>
+        }} color={"white"} fontWeight={600}>To som ja! Len finančne negramotný človek. <br/> Easter egg obsahuje aj svoje číslo napr. (1/8)</Text>
         <Navigation />
         <Heading className='calendar__heading' as={"h2"} mt={8} mb={0.5} textAlign={"center"} color={'white'} size={{
           base: "xl",
