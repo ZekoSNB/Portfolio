@@ -27,12 +27,8 @@ export function isValidHash(text: string): string{
         return invmessages[text as keyof typeof invmessages] || "Dojebalo sa";
       }      
     const hash = CryptoJS.SHA256(text).toString();
-    console.log(hash)
     for (const [key, value] of Object.entries(messages)) {
-        console.log(hash, value);
         if (value && hash === value) {
-            console.log("Found match for key: ", key);
-            console.log("message: ", return_values[key]);
             return return_values[key] || "No message found";
         }
     }
