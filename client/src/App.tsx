@@ -28,7 +28,7 @@ function App() {
           base: "l",
           md: "2xl"
         }} color={"white"} fontStyle={'italic'} fontWeight={400}>{
-          showLink ? <Link href={hiddenValue} variant={"underline"} target="_blank" rel="noopener noreferrer">{"Klikni a čítaj :)"}</Link> : hiddenValue ? hiddenValue : null
+          showLink ? <Link href={hiddenValue} variant={"underline"} color={"white"} target="_blank" rel="noopener noreferrer">{"Klikni a čítaj :)"}</Link> : hiddenValue ? hiddenValue : null
         }</Text>
         <Heading as={"h1"} textAlign={"center"} color={'white'} size={{
           base: "4xl",
