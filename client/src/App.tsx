@@ -1,7 +1,7 @@
 import './styles/App.css'
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
 import { Title } from './utils/Title';
-import { Text, Heading} from '@chakra-ui/react';
+import { Text, Heading, Link} from '@chakra-ui/react';
 import { Navigation } from './components/Navigation';
 import { CursorTrail } from './components/CursorTrail';
 import { GithubCalendarComp } from './components/GithubCalendar';
@@ -11,6 +11,15 @@ import { Password } from './components/Password';
 function App() {
   Title();
   const [hiddenValue, setHiddenValue] = useState<string | undefined>(undefined);
+  const [showLink, setShowLink] = useState<boolean>(false);
+  useEffect(() => {
+    if (hiddenValue?.includes("docs.google.com")) {
+      setShowLink(true);
+    } else {
+      setShowLink(false);
+    }
+
+  }, [hiddenValue])
   return (
     <>
       <CursorTrail />
@@ -18,7 +27,9 @@ function App() {
         <Text textAlign={"left"} fontSize={{
           base: "l",
           md: "2xl"
-        }} color={"white"} fontStyle={'italic'} fontWeight={400}>{hiddenValue ? hiddenValue : null}</Text>
+        }} color={"white"} fontStyle={'italic'} fontWeight={400}>{
+          showLink ? <Link href={hiddenValue} variant={"underline"} target="_blank" rel="noopener noreferrer">{"Klikni a čítaj :)"}</Link> : hiddenValue ? hiddenValue : null
+        }</Text>
         <Heading as={"h1"} textAlign={"center"} color={'white'} size={{
           base: "4xl",
           md: "6xl",
