@@ -9,7 +9,7 @@ export function Password({setter}: {setter: React.Dispatch<React.SetStateAction<
     const onSubmit = (e: React.FormEvent<HTMLFormElement>) => {
         e.preventDefault();
         if (!value) {
-            setter("Nech si sa snažil, nič tam nie je");
+            setter("Nech si sa snažil, nič tam nie je... či?");
             return;
         }
         GetInputRequest(value).then((message) => {

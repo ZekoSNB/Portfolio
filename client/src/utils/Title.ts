@@ -8,6 +8,9 @@ export function Title() {
           "Silence is golden",
           "GVBN </3",
           "Does god exist?",
+          "What is the meaning of life?",
+          "Kedy káva?",
+          "Verím alebo neverím v boha?"
         ];
     
         let intervalTimer: number | undefined = undefined;

@@ -1,4 +1,4 @@
-import './styles/App.css'
+import './styles/App.css';
 import { useState, useEffect } from 'react';
 import { Title } from './utils/Title';
 import { Text, Heading, Link} from '@chakra-ui/react';
@@ -12,13 +12,13 @@ function App() {
   Title();
   const [hiddenValue, setHiddenValue] = useState<string | undefined>(undefined);
   const [showLink, setShowLink] = useState<boolean>(false);
+
   useEffect(() => {
     if (hiddenValue?.includes("docs.google.com")) {
       setShowLink(true);
-    } else {
-      setShowLink(false);
+      return;
     }
-
+    setShowLink(false);
   }, [hiddenValue])
   return (
     <>
