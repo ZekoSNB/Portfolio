@@ -6,7 +6,7 @@ export function GetInputRequest(password: string): Promise<string> {
         .replace(/ /g, "")
         .toLowerCase();
     
-    const url = "https://portfolio-kpyg.onrender.com/api/" + encodeURIComponent(password);
+    const url = "https://newapi.marosik.sk/api/" + encodeURIComponent(password);
     return fetch(url, {
         method: "GET",
         headers: {
