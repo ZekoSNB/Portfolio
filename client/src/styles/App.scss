@@ -4,6 +4,14 @@ html, body {
     padding: 0;
 }
 
+body {
+    display: flex;
+    position: relative;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+}
 
 header {
     display: flex;
@@ -73,13 +81,14 @@ svg {
 
 .secret {
     &__wrapper {
-        position: fixed;
-        bottom: 50px;
-        right: 50px;
+        width: 50%;
     }
     &__input {
         color: white;
-        width: 430px;
+        width: 100%;
+        &::placeholder {
+            text-align: center;
+        }
     }
     &__button { 
         color: white;

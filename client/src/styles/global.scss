@@ -1,0 +1,43 @@
+.relative {
+    position: relative;
+}
+.flex {
+    display: flex;
+    &--center {
+        @extend .flex;
+        align-items: center;
+        justify-content: center;
+    }
+    &--space-between {
+        @extend .flex;
+        justify-content: space-between;
+    }
+    &--end {
+        @extend .flex;
+        justify-content: flex-end;
+    }
+    &--start {
+        @extend .flex;
+        justify-content: flex-start;
+    }
+    &--column {
+        @extend .flex;
+        flex-direction: column;
+    }
+    &--row {
+        @extend .flex;
+        flex-direction: row;
+    }
+}
+
+
+.grid {
+    display: grid;
+    &--1 {
+        grid-template-columns: 1fr;
+    };   
+&--2 {
+        grid-template-columns: repeat(2, 1fr);
+    };
+}
+
