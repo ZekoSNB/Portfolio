@@ -1,6 +1,6 @@
 import { useState, useEffect } from "react";
 import { Password } from "../components/Password";
-import { Text, Link } from "@chakra-ui/react";
+import { Text, Link, Box } from "@chakra-ui/react";
 
 export function Quiz() {
   const [hiddenValue, setHiddenValue] = useState<string | undefined>('Tu dostanes spravu pri zadani spravneho hesla :)');
@@ -14,14 +14,14 @@ export function Quiz() {
     setShowLink(false);
   }, [hiddenValue])
   return (
-    <>
+    <Box p={4} mt={6}  borderRadius={6} w={"75%"} className="flex--center flex--column"> 
       <Text textAlign={"left"} fontSize={{
           base: "l",
-          md: "2xl"
-        }} color={"white"} fontStyle={'italic'} fontWeight={400} mt={8}>{
+          md: "xl"
+        }} color={"white"} fontStyle={'italic'} fontWeight={400} mb={4} >{
           showLink ? <Link href={hiddenValue} variant={"underline"} color={"white"} target="_blank" rel="noopener noreferrer">{"Klikni a čítaj :)"}</Link> : hiddenValue ? hiddenValue : null
         }</Text>
         <Password setter={setHiddenValue} />
-    </>
+    </Box>
   )
 }
