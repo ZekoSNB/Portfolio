@@ -32,9 +32,9 @@ export function LeadSection() {
             }}>*Najlepší človek na svete</Text>
         </Box>
         <Box className="flex--center flex--column">
-            <Tabs.Root variant={"line"}>
+            <Tabs.Root variant={"line"} colorPalette={"white"}>
                 <Tabs.List>
-                    <Tabs.Trigger value="members">
+                    <Tabs.Trigger  value="members">
                         <LuUser />
                         Members
                     </Tabs.Trigger>
@@ -47,6 +47,15 @@ export function LeadSection() {
                         Tasks
                     </Tabs.Trigger>
                 </Tabs.List>
+                    <Tabs.Content value="members">
+                        <Text color={"white"} fontSize={"xl"}>Members content goes here.</Text>
+                    </Tabs.Content>
+                    <Tabs.Content value="projects">
+                        <Text color={"white"} fontSize={"xl"}>Projects content goes here.</Text>
+                    </Tabs.Content>
+                    <Tabs.Content value="tasks">
+                        <Text color={"white"} fontSize={"xl"}>Tasks content goes here.</Text>
+                    </Tabs.Content>
             </Tabs.Root>
         </Box>
     </Box>

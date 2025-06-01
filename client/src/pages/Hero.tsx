@@ -2,7 +2,6 @@
 import { GithubCalendarComp } from "../components/GithubCalendar";
 import { Navigation } from "../components/Navigation";
 import { Heading, Text, Box } from "@chakra-ui/react";
-import { Quiz } from './Quiz';
 
 
 
@@ -25,7 +24,6 @@ export function Hero() {
           md: "2xl",
         }}>GitHub Contributions</Heading>
         <GithubCalendarComp />
-        <Quiz/>
       </Box>
   )
 }
