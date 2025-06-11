@@ -1,4 +1,5 @@
 import styled from 'styled-components';
+import { useState, useRef, MouseEvent } from 'react';
 
 const TimelineContainer = styled.div`
   width: 100%;
@@ -8,6 +9,10 @@ const TimelineContainer = styled.div`
   margin: 0;
   display: flex;
   align-items: stretch;
+  cursor: grab;
+  &:active {
+    cursor: grabbing;
+  }
   &::-webkit-scrollbar {
     height: 6px;
   }
@@ -93,6 +98,34 @@ const Description = styled.p`
 `;
 
 export function History() {
+  const [isDragging, setIsDragging] = useState(false);
+  const [startX, setStartX] = useState(0);
+  const [scrollLeft, setScrollLeft] = useState(0);
+  const containerRef = useRef<HTMLDivElement>(null);
+
+  const handleMouseDown = (e: MouseEvent) => {
+    if (!containerRef.current) return;
+    setIsDragging(true);
+    setStartX(e.pageX - containerRef.current.offsetLeft);
+    setScrollLeft(containerRef.current.scrollLeft);
+  };
+
+  const handleMouseUp = () => {
+    setIsDragging(false);
+  };
+
+  const handleMouseMove = (e: MouseEvent) => {
+    if (!isDragging || !containerRef.current) return;
+    e.preventDefault();
+    const x = e.pageX - containerRef.current.offsetLeft;
+    const walk = (x - startX) * 1.3;
+    containerRef.current.scrollLeft = scrollLeft - walk;
+  };
+
+  const handleMouseLeave = () => {
+    setIsDragging(false);
+  };
+
   const timelineData = [
     {
       year: '2020',
@@ -122,7 +155,13 @@ export function History() {
   
 
   return (
-    <TimelineContainer>
+    <TimelineContainer
+      ref={containerRef}
+      onMouseDown={handleMouseDown}
+      onMouseUp={handleMouseUp}
+      onMouseMove={handleMouseMove}
+      onMouseLeave={handleMouseLeave}
+    >
       <TimelineWrapper>
         {timelineData.map((item, index) => (
           <TimelineItem key={index}>
