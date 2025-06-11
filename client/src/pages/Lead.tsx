@@ -1,17 +1,10 @@
 import { Image, Box, Text, Tabs } from "@chakra-ui/react";
-import styled from 'styled-components';
 import marosik from "../assets/images/maros-tomasov.webp";
 import { LuFolder, LuSquareCheck, LuUser } from "react-icons/lu";
 import { History } from './tabs_content/History';
 import { Character } from "./tabs_content/Character";
 import { AboutMe } from "./tabs_content/AboutMe";
-
-const TabContentWrapper = styled.div`
-  min-width: 100%;
-  width: 100%;
-  display: flex;
-  flex-direction: column;
-`;
+import '../styles/Lead.css';
 
 export function LeadSection() {
   return (
@@ -29,45 +22,31 @@ export function LeadSection() {
       justifyContent="center"
       alignItems="start"
       background={"none"}
-      
     >
         <Box pb={4} className="relative flex--center" w={"100%"}> 
             <Box borderRadius={"12px"} border={"2px solid rgba(200,200,200,0.5)"} mt={4} overflow={"hidden"} >
                 <Image src={marosik} alt="Maros Tomášov" w={{ base: "100%", md: "350px" }}/>
             </Box>
-            <Text style={{
-                position: 'absolute',
-                bottom: '0',
-                left: '50%',
-                transform: 'TranslateX(-50%)',
-                textAlign: 'center',
-                color: 'white',
-                fontSize: '8px',
-                fontWeight: 'bold',
-                textTransform: 'uppercase',
-                letterSpacing: '1px',
-                fontFamily: 'monospace',
-                whiteSpace: 'nowrap',
-            }}>*Najlepší človek na svete</Text>
+            <Text className="image-caption">*Najlepší človek na svete</Text>
         </Box>
         <Box className="flex--center flex--column" width="100%">
             <Tabs.Root variant={"line"} defaultValue="history" width="100%">
                 <Tabs.List>
-                    <Tabs.Trigger  value="history" _selected={{
+                    <Tabs.Trigger value="history" _selected={{
                         color: "white",
                         borderBottom: "2px solid white"
                     }}>
                         <LuUser />
                         History
                     </Tabs.Trigger>
-                    <Tabs.Trigger value="character"_selected={{
+                    <Tabs.Trigger value="character" _selected={{
                         color: "white",
                         borderBottom: "2px solid white"
                     }}>
                         <LuFolder />
                         Characteristics
                     </Tabs.Trigger>
-                    <Tabs.Trigger value="aboutme"_selected={{
+                    <Tabs.Trigger value="aboutme" _selected={{
                         color: "white",
                         borderBottom: "2px solid white"
                     }}>
@@ -77,19 +56,19 @@ export function LeadSection() {
                 </Tabs.List>
                 <Box mt={4} width="100%">
                     <Tabs.Content value="history">
-                        <TabContentWrapper>
+                        <Box className="tab-content-wrapper">
                             <History />
-                        </TabContentWrapper>
+                        </Box>
                     </Tabs.Content>
                     <Tabs.Content value="character">
-                        <TabContentWrapper>
+                        <Box className="tab-content-wrapper">
                             <Character />
-                        </TabContentWrapper>
+                        </Box>
                     </Tabs.Content>
                     <Tabs.Content value="aboutme">
-                        <TabContentWrapper>
+                        <Box className="tab-content-wrapper">
                             <AboutMe />
-                        </TabContentWrapper>
+                        </Box>
                     </Tabs.Content>
                 </Box>
             </Tabs.Root>
