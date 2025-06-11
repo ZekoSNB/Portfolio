@@ -1,5 +1,3 @@
-
-
 html, body {
   background-color: black;
   margin: 0;
@@ -7,18 +5,33 @@ html, body {
 }
 
 body {
+  display: -webkit-box;
+  display: -ms-flexbox;
   display: flex;
   position: relative;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
   width: 100%;
 }
 
 header {
+  display: -webkit-box;
+  display: -ms-flexbox;
   display: flex;
-  justify-content: center;
-  align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
   background-color: #282c34;
   padding: 20px;
   color: white;
@@ -28,6 +41,7 @@ header {
 * {
   -webkit-user-select: none;
      -moz-user-select: none;
+      -ms-user-select: none;
           user-select: none;
 }
 
@@ -38,11 +52,15 @@ svg {
 .social-icon {
   -webkit-user-select: none;
      -moz-user-select: none;
+      -ms-user-select: none;
           user-select: none;
+  -webkit-transition: all 0.3s cubic-bezier(0.075, 0.82, 0.165, 1);
   transition: all 0.3s cubic-bezier(0.075, 0.82, 0.165, 1);
 }
+
 .social-icon:hover {
-  transform: translateY(-7px) scale(1.05);
+  -webkit-transform: translateY(-7px) scale(1.05);
+          transform: translateY(-7px) scale(1.05);
 }
 
 .react-activity-calendar__calendar {
@@ -54,21 +72,30 @@ svg {
 }
 
 .mt-header__nav {
+  display: -webkit-box;
+  display: -ms-flexbox;
   display: flex;
-  justify-content: space-around;
+  -ms-flex-pack: distribute;
+      justify-content: space-around;
   width: 100%;
 }
+
 .mt-header__nav a {
   position: relative;
   color: white;
   text-decoration: none;
+  -webkit-transition: all 0.15s ease-in;
   transition: all 0.15s ease-in;
 }
+
 .mt-header__nav a:hover::after {
   width: 100%;
+  -webkit-transition: all 0.15s ease-in;
   transition: all 0.15s ease-in;
 }
+
 .mt-header__nav a::after {
+  -webkit-transition: all 0.15s ease-in;
   transition: all 0.15s ease-in;
   content: "";
   position: absolute;
@@ -82,19 +109,32 @@ svg {
 .secret__wrapper {
   width: 100%;
 }
+
 .secret__input {
   color: white;
   width: 100%;
 }
-.secret__input::-moz-placeholder {
+
+.secret__input::-webkit-input-placeholder {
   text-align: center;
 }
+
+.secret__input:-ms-input-placeholder {
+  text-align: center;
+}
+
+.secret__input::-ms-input-placeholder {
+  text-align: center;
+}
+
 .secret__input::placeholder {
   text-align: center;
 }
+
 .secret__button {
   color: white;
 }
+
 .secret__button:hover {
   color: black;
 }
@@ -120,4 +160,5 @@ svg {
   .secret__button {
     width: 100%;
   }
-}/*# sourceMappingURL=App.css.map */
+}
+/*# sourceMappingURL=App.css.map */

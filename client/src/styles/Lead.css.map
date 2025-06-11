@@ -1,1 +1,9 @@
-{"version":3,"sources":[],"names":[],"mappings":"","file":"Lead.css"}
+{
+    "version": 3,
+    "mappings": "",
+    "sources": [
+        "Lead.scss"
+    ],
+    "names": [],
+    "file": "Lead.css"
+}

@@ -1,101 +1,5 @@
-import styled from 'styled-components';
 import { useState, useRef, MouseEvent } from 'react';
-
-const TimelineContainer = styled.div`
-  width: 100%;
-  height: 100%;
-  overflow-x: auto;
-  padding: 1rem 0;
-  margin: 0;
-  display: flex;
-  align-items: stretch;
-  cursor: grab;
-  &:active {
-    cursor: grabbing;
-  }
-  &::-webkit-scrollbar {
-    height: 6px;
-  }
-  &::-webkit-scrollbar-track {
-    background: rgba(255, 255, 255, 0.1);
-    border-radius: 4px;
-  }
-  &::-webkit-scrollbar-thumb {
-    background: rgba(255, 255, 255, 0.3);
-    border-radius: 4px;
-    &:hover {
-      background: rgba(255, 255, 255, 0.4);
-    }
-  }
-`;
-
-const TimelineWrapper = styled.div`
-  display: inline-flex;
-  padding: 0 1rem;
-  gap: 1.5rem;
-  min-width: min-content;
-  height: 100%;
-  align-items: stretch;
-  @media (max-width: 768px) {
-    padding: 0 1rem;
-    gap: 1rem;
-  }
-`;
-
-const TimelineItem = styled.div`
-  width: 280px;
-  height: auto;
-  min-height: 200px;
-  background: rgba(255, 255, 255, 0.05);
-  border-radius: 12px;
-  padding: 1.25rem;
-  border: 1px solid rgba(255, 255, 255, 0.1);
-  backdrop-filter: blur(10px);
-  transition: transform 0.3s ease;
-  flex-shrink: 0;
-  display: flex;
-  flex-direction: column;
-  justify-content: flex-start;
-
-  &:hover {
-    transform: translateY(-5px);
-  }
-
-  @media (max-width: 768px) {
-    width: 250px;
-  }
-`;
-
-const Year = styled.h3`
-  color: #fff;
-  font-size: 1.1rem;
-  margin-bottom: 0.75rem;
-  font-weight: 600;
-`;
-
-const Description = styled.p`
-  color: rgba(255, 255, 255, 0.8);
-  font-size: 0.9rem;
-  line-height: 1.5;
-  white-space: normal;
-  overflow-y: auto;
-  max-height: 150px;
-  margin: 0;
-  &::-webkit-scrollbar {
-    width: 4px;
-  }
-  &::-webkit-scrollbar-track {
-    background: rgba(255, 255, 255, 0.1);
-    border-radius: 4px;
-  }
-  &::-webkit-scrollbar-thumb {
-    background: rgba(255, 255, 255, 0.3);
-    border-radius: 4px;
-    &:hover {
-      background: rgba(255, 255, 255, 0.4);
-    }
-  }
-`;
+import '../../styles/History.css';
 
 export function History() {
   const [isDragging, setIsDragging] = useState(false);
@@ -152,24 +56,17 @@ export function History() {
       description: 'Do budúcna mám veľa plánov – som ešte len na začiatku cesty. Verím, že raz budem jazdiť na Porsche Panamere a Toyote Yaris GR.'
     }
   ];
-  
 
   return (
-    <TimelineContainer
-      ref={containerRef}
-      onMouseDown={handleMouseDown}
-      onMouseUp={handleMouseUp}
-      onMouseMove={handleMouseMove}
-      onMouseLeave={handleMouseLeave}
-    >
-      <TimelineWrapper>
+    <div className="timeline-container" ref={containerRef} onMouseDown={handleMouseDown} onMouseUp={handleMouseUp} onMouseMove={handleMouseMove} onMouseLeave={handleMouseLeave}>
+      <div className="timeline-wrapper">
         {timelineData.map((item, index) => (
-          <TimelineItem key={index}>
-            <Year>{item.year}</Year>
-            <Description>{item.description}</Description>
-          </TimelineItem>
+          <div className="timeline-item" key={index}>
+            <h3 className="timeline-year">{item.year}</h3>
+            <p className="timeline-description">{item.description}</p>
+          </div>
         ))}
-      </TimelineWrapper>
-    </TimelineContainer>
+      </div>
+    </div>
   );
 }
