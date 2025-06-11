@@ -3,16 +3,19 @@ import { Box, Grid, GridItem, Heading, Text } from '@chakra-ui/react';
 export function Character() {
     const characteristics = {
         physical: {
-            stamina: 100,
-            strength: 85,
+            vytrvalosť: 5,
+            sila: 65,
+            staroba: 17
         },
         mental: {
-            intelligence: 88,
-            wisdom: 92,
+            múdrosť: 60,
+            pamäť: 0,
+            Logické_myslenie: 90
         },
         skills: {
-            combat: 85,
-            magic: 80,
+            lezenie: 20,
+            spánok: 0,
+            profesionálna_prokrastinácia: 999
         }
     };
 
@@ -35,7 +38,6 @@ export function Character() {
 
     return (
         <Box p={4}>
-            <Heading mb={4} color="white" size="lg">Character Characteristics</Heading>
             <Grid templateColumns={{ base: '1fr', md: 'repeat(3, 1fr)' }} gap={4}>
                 {/* Physical Characteristics */}
                 <GridItem>
@@ -48,7 +50,7 @@ export function Character() {
                         boxShadow="lg"
                     >
                         <Heading size="md" mb={3} color="white">
-                            Physical Attributes
+                            Telové štatistiky
                         </Heading>
                         <Box display="flex" flexDirection="column" gap={3}>
                             {Object.entries(characteristics.physical).map(([key, value]) => (
@@ -77,13 +79,13 @@ export function Character() {
                         boxShadow="lg"
                     >
                         <Heading size="md" mb={3} color="white">
-                            Mental Attributes
+                            Mozog
                         </Heading>
                         <Box display="flex" flexDirection="column" gap={3}>
                             {Object.entries(characteristics.mental).map(([key, value]) => (
                                 <Box key={key}>
                                     <Text textTransform="capitalize" mb={1} color="gray.300">
-                                        {key}
+                                        {key.replace("_", " ")}
                                     </Text>
                                     <ProgressBar value={value} colorScheme="purple" />
                                     <Text fontSize="sm" color="gray.400" mt={1}>
@@ -112,7 +114,7 @@ export function Character() {
                             {Object.entries(characteristics.skills).map(([key, value]) => (
                                 <Box key={key}>
                                     <Text textTransform="capitalize" mb={1} color="gray.300">
-                                        {key}
+                                        {key.replace("_", " ")}
                                     </Text>
                                     <ProgressBar value={value} colorScheme="green" />
                                     <Text fontSize="sm" color="gray.400" mt={1}>
