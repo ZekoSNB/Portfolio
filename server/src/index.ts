@@ -35,7 +35,8 @@ app.use(limiter);
 
 app.get('/api/:hash_message', (_req, res) => {
   const hash = _req.params.hash_message;
-  const isValid = isValidHash(hash);
+  // const isValid = isValidHash(hash);
+  const isValid:string = "ahoj";
   res.json({
     message: isValid,
     timestamp: new Date().toISOString(),

@@ -10,11 +10,14 @@
     "preview": "vite preview"
   },
   "dependencies": {
-    "@chakra-ui/react": "^3.16.1",
+    "@chakra-ui/react": "^3.20.0",
+    "@chakra-ui/system": "^2.6.2",
+    "@chakra-ui/theme": "^3.4.6",
     "@emotion/react": "^11.14.0",
+    "@emotion/styled": "^11.14.0",
     "@tailwindcss/vite": "^4.1.8",
     "dotenv": "^16.5.0",
-    "framer-motion": "^12.9.4",
+    "framer-motion": "^12.17.0",
     "next-themes": "^0.4.6",
     "react": "^19.0.0",
     "react-dom": "^19.0.0",

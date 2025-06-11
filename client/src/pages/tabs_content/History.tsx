@@ -1,31 +1,137 @@
 import React from 'react';
+import styled from 'styled-components';
 
-type TimelineEvent = {
-  year: number;
-  label: string;
-};
+const TimelineContainer = styled.div`
+  width: 100%;
+  height: 100%;
+  overflow-x: auto;
+  padding: 1rem 0;
+  margin: 0;
+  display: flex;
+  align-items: stretch;
+  &::-webkit-scrollbar {
+    height: 6px;
+  }
+  &::-webkit-scrollbar-track {
+    background: rgba(255, 255, 255, 0.1);
+    border-radius: 4px;
+  }
+  &::-webkit-scrollbar-thumb {
+    background: rgba(255, 255, 255, 0.3);
+    border-radius: 4px;
+    &:hover {
+      background: rgba(255, 255, 255, 0.4);
+    }
+  }
+`;
 
-const events: TimelineEvent[] = [
-  { year: 1990, label: 'Started project' },
-  { year: 2000, label: 'Milestone' },
-  { year: 2010, label: 'Expansion' },
-  { year: 2020, label: 'Redesign' },
-  { year: 2024, label: 'Relaunch' },
-];
+const TimelineWrapper = styled.div`
+  display: inline-flex;
+  padding: 0 1rem;
+  gap: 1.5rem;
+  min-width: min-content;
+  height: 100%;
+  align-items: stretch;
+  @media (max-width: 768px) {
+    padding: 0 1rem;
+    gap: 1rem;
+  }
+`;
 
-export const History: React.FC = () => {
+const TimelineItem = styled.div`
+  width: 280px;
+  height: auto;
+  min-height: 200px;
+  background: rgba(255, 255, 255, 0.05);
+  border-radius: 12px;
+  padding: 1.25rem;
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  backdrop-filter: blur(10px);
+  transition: transform 0.3s ease;
+  flex-shrink: 0;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+
+  &:hover {
+    transform: translateY(-5px);
+  }
+
+  @media (max-width: 768px) {
+    width: 250px;
+  }
+`;
+
+const Year = styled.h3`
+  color: #fff;
+  font-size: 1.1rem;
+  margin-bottom: 0.75rem;
+  font-weight: 600;
+`;
+
+const Description = styled.p`
+  color: rgba(255, 255, 255, 0.8);
+  font-size: 0.9rem;
+  line-height: 1.5;
+  white-space: normal;
+  overflow-y: auto;
+  max-height: 150px;
+  margin: 0;
+  &::-webkit-scrollbar {
+    width: 4px;
+  }
+  &::-webkit-scrollbar-track {
+    background: rgba(255, 255, 255, 0.1);
+    border-radius: 4px;
+  }
+  &::-webkit-scrollbar-thumb {
+    background: rgba(255, 255, 255, 0.3);
+    border-radius: 4px;
+    &:hover {
+      background: rgba(255, 255, 255, 0.4);
+    }
+  }
+`;
+
+export function History() {
+  const timelineData = [
+    {
+      year: '2020',
+      description: 'Začiatky s programovaním – spoznával som základy HTML a neskôr som sa pustil do jednoduchých hier v Pythone.'
+    },
+    {
+      year: '2021',
+      description: 'Pokračoval som v rôznych projektoch v Pythone, skúšal som Flutter aj React a vytvoril som svoju prvú webovú stránku vo WordPresse pomocou Elementoru.'
+    },
+    {
+      year: '2023',
+      description: 'Začal som pracovať v digitálnej agentúre Weblox, kde som tvoril weby vo WordPresse pomocou Bricks buildera. Aktívne som sa zapájal do mládežníckych parlamentov a zároveň som ukončil základnú školu.'
+    },
+    {
+      year: '2024',
+      description: 'Začal som pracovať v Ametike, kde som dodnes. Intenzívne som sa venoval učeniu PHP a prehĺbil som svoje znalosti v Reacte.'
+    },
+    {
+      year: '2025',
+      description: 'Freelancujem a zároveň pracujem v Ametike. Zlepšujem sa v používaní CSS a vytváram svoje prvé aplikácie pomocou NextJS a Vite.'
+    },
+    {
+      year: 'Budúcnosť',
+      description: 'Do budúcna mám veľa plánov – som ešte len na začiatku cesty. Verím, že raz budem jazdiť na Porsche Panamere a Toyote Yaris GR.'
+    }
+  ];
+  
+
   return (
-    <div className="overflow-x-auto w-full">
-      <div className="flex items-center space-x-12 px-8 py-6 min-w-max border-t-2 border-gray-300 relative">
-        {events.map((event) => (
-          <div key={event.year} className="text-center flex-shrink-0">
-            <div className="w-4 h-4 bg-blue-500 rounded-full mx-auto mb-2" />
-            <div className="text-sm font-semibold text-white">{event.year}</div>
-            <div className="text-xs text-white">{event.label}</div>
-          </div>
+    <TimelineContainer>
+      <TimelineWrapper>
+        {timelineData.map((item, index) => (
+          <TimelineItem key={index}>
+            <Year>{item.year}</Year>
+            <Description>{item.description}</Description>
+          </TimelineItem>
         ))}
-      </div>
-    </div>
+      </TimelineWrapper>
+    </TimelineContainer>
   );
-};
-
+}

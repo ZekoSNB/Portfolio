@@ -1,6 +1,6 @@
 import CryptoJS from 'crypto-js';
 import { sendEmail } from './mailer';
-import invmessages from '/etc/secrets/messages.json';
+import invmessages from './messages.json';
 
 
 export function isValidHash(text: string): string{
