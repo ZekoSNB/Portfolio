@@ -1,23 +1,16 @@
-/* No CSS *//*# sourceMappingURL=Lead.css.map */
-
-.tab-content-wrapper {
-  min-width: 100%;
-  width: 100%;
-  display: flex;
-  flex-direction: column;
-}
-
 .image-caption {
   position: absolute;
   bottom: 0;
   left: 50%;
-  transform: translateX(-50%);
+  -webkit-transform: translate(-50%);
+          transform: translate(-50%);
   text-align: center;
-  color: white;
+  color: #fff;
   font-size: 8px;
-  font-weight: bold;
+  font-weight: 700;
   text-transform: uppercase;
   letter-spacing: 1px;
   font-family: monospace;
   white-space: nowrap;
 }
+/*# sourceMappingURL=Lead.css.map */

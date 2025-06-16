@@ -94,7 +94,7 @@
 
 @media (max-width: 768px) {
   .timeline-item {
-    width: 250px;
+    width: 60vw;
   }
 }
 
