@@ -1,9 +1,11 @@
-import { Heading } from "@chakra-ui/react";
+import { Heading, Link } from "@chakra-ui/react";
 
 export function AboutMe() {
-    return (
-        <Heading color={"white"}>
-            Silence is golden.
-        </Heading>
-    )
+  return (
+    <Heading>
+      <Link color={"white"} variant={"underline"} href="https://ametica.sk">
+        Silence is golden.
+      </Link>
+    </Heading>
+  );
 }

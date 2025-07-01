@@ -1,6 +1,6 @@
 import { Image, Box, Text, Tabs } from "@chakra-ui/react";
 import marosik from "../assets/images/maros-tomasov.webp";
-import { LuFolder, LuSquareCheck, LuUser } from "react-icons/lu";
+import { LuUser, LuBadgeInfo, LuHistory } from "react-icons/lu";
 import { History } from "./tabs_content/History";
 import { Character } from "./tabs_content/Character";
 import { AboutMe } from "./tabs_content/AboutMe";
@@ -73,7 +73,7 @@ export function LeadSection() {
                 borderBottom: "2px solid white",
               }}
             >
-              <LuUser />
+              <LuHistory />
               History
             </Tabs.Trigger>
             <Tabs.Trigger
@@ -83,7 +83,7 @@ export function LeadSection() {
                 borderBottom: "2px solid white",
               }}
             >
-              <LuFolder />
+              <LuUser />
               Characteristics
             </Tabs.Trigger>
             <Tabs.Trigger
@@ -93,7 +93,7 @@ export function LeadSection() {
                 borderBottom: "2px solid white",
               }}
             >
-              <LuSquareCheck />
+              <LuBadgeInfo />
               About Me
             </Tabs.Trigger>
           </Tabs.List>

@@ -1,5 +1,5 @@
-import { useState, useRef, MouseEvent } from 'react';
-import '../../styles/History.css';
+import { useState, useRef, MouseEvent } from "react";
+import "../../styles/History.css";
 
 export function History() {
   const [isDragging, setIsDragging] = useState(false);
@@ -32,33 +32,46 @@ export function History() {
 
   const timelineData = [
     {
-      year: '2020',
-      description: 'Začiatky s programovaním – spoznával som základy HTML a neskôr som sa pustil do jednoduchých hier v Pythone.'
+      year: "2020",
+      description:
+        "Začiatky s programovaním – spoznával som základy HTML a neskôr som sa pustil do jednoduchých hier v Pythone.",
     },
     {
-      year: '2021',
-      description: 'Pokračoval som v rôznych projektoch v Pythone, skúšal som Flutter aj React a vytvoril som svoju prvú webovú stránku vo WordPresse pomocou Elementoru.'
+      year: "2021",
+      description:
+        "Pokračoval som v rôznych projektoch v Pythone, skúšal som Flutter aj React a vytvoril som svoju prvú webovú stránku vo WordPresse pomocou Elementoru.",
     },
     {
-      year: '2023',
-      description: 'Začal som pracovať v digitálnej agentúre Weblox, kde som tvoril weby vo WordPresse pomocou Bricks buildera. Aktívne som sa zapájal do mládežníckych parlamentov a zároveň som ukončil základnú školu.'
+      year: "2023",
+      description:
+        "Začal som pracovať v digitálnej agentúre Weblox, kde som tvoril weby vo WordPresse pomocou Bricks buildera. Aktívne som sa zapájal do mládežníckych parlamentov a zároveň som ukončil základnú školu.",
     },
     {
-      year: '2024',
-      description: 'Začal som pracovať v Ametike, kde som dodnes. Intenzívne som sa venoval učeniu PHP a prehĺbil som svoje znalosti v Reacte.'
+      year: "2024",
+      description:
+        "Začal som pracovať v Ametice, kde som dodnes. Intenzívne som sa venoval učeniu PHP a prehĺbil som svoje znalosti v Reacte.",
     },
     {
-      year: '2025',
-      description: 'Freelancujem a zároveň pracujem v Ametike. Zlepšujem sa v používaní CSS a vytváram svoje prvé aplikácie pomocou NextJS a Vite.'
+      year: "2025",
+      description:
+        "Freelancujem a zároveň pracujem v Ametice. Zlepšujem sa v používaní CSS a vytváram svoje prvé aplikácie pomocou NextJS a Vite.",
     },
     {
-      year: 'Budúcnosť',
-      description: 'Do budúcna mám veľa plánov – som ešte len na začiatku cesty. Verím, že raz budem jazdiť na Porsche Panamere a Toyote Yaris GR.'
-    }
+      year: "Budúcnosť",
+      description:
+        "Do budúcna mám veľa plánov – som ešte len na začiatku cesty. Verím, že raz budem jazdiť na Porsche Panamere a Toyote Yaris GR.",
+    },
   ];
 
   return (
-    <div className="timeline-container" ref={containerRef} onMouseDown={handleMouseDown} onMouseUp={handleMouseUp} onMouseMove={handleMouseMove} onMouseLeave={handleMouseLeave}>
+    <div
+      className="timeline-container"
+      ref={containerRef}
+      onMouseDown={handleMouseDown}
+      onMouseUp={handleMouseUp}
+      onMouseMove={handleMouseMove}
+      onMouseLeave={handleMouseLeave}
+    >
       <div className="timeline-wrapper">
         {timelineData.map((item, index) => (
           <div className="timeline-item" key={index}>
