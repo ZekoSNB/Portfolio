@@ -4,6 +4,7 @@ import { Title } from './utils/Title';
 import { CursorTrail } from './components/CursorTrail';
 import { Hero } from './pages/Hero';
 import { LeadSection } from './pages/Lead';
+import { DadJoke } from './components/DadJokeOTD';
 
 function App() {
   Title();
@@ -11,6 +12,7 @@ function App() {
   return (
     <>
       <CursorTrail />
+      <DadJoke />      
       <Hero />
       <LeadSection />
     </>
