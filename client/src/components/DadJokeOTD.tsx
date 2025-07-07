@@ -12,17 +12,21 @@ export function DadJoke() {
     }, [])
     return (
         <Heading style={{
-            position: "fixed",
+            position: "absolute",
             zIndex: 999,
             display: 'block',
             top: "1%",
             left: "50%",
             transform: 'translateX(-50%)',
             color: "white",
-            width: '90%'
+            width: '90%',
+        }}
+        textAlign={{
+            base: "justify",
+            md: "center"
         }}>
             Dad Joke:
-            {joke ? joke : ''}
+            {joke ? " " + joke : ''}
         </Heading>
     )
 }
