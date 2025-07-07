@@ -1,4 +1,4 @@
-import { Image, Box, Text, Tabs, Heading } from "@chakra-ui/react";
+import { Image, Box, Text, Tabs } from "@chakra-ui/react";
 import marosik from "../assets/images/maros-tomasov.webp";
 import { LuUser, LuBadgeInfo, LuHistory } from "react-icons/lu";
 import { History } from "./tabs_content/History";
