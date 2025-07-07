@@ -25,7 +25,6 @@ export function DadJoke() {
             base: "justify",
             md: "center"
         }}>
-            Dad Joke:
             {joke ? " " + joke : ''}
         </Heading>
     )
