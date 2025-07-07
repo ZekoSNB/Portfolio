@@ -1,12 +1,16 @@
-import { Image, Box, Text, Tabs } from "@chakra-ui/react";
+import { Image, Box, Text, Tabs, Heading } from "@chakra-ui/react";
 import marosik from "../assets/images/maros-tomasov.webp";
 import { LuUser, LuBadgeInfo, LuHistory } from "react-icons/lu";
 import { History } from "./tabs_content/History";
 import { Character } from "./tabs_content/Character";
 import { AboutMe } from "./tabs_content/AboutMe";
 import "../styles/Lead.css";
+import { useState } from "react";
 
 export function LeadSection() {
+  const [sat, setSat] = useState<number>(0);
+  const levels: number[] = [1.8, 0, 250, 3, 4, 0.3, 2000, 0.2];
+  let saturation = `saturate(${levels[sat%8]})`;
   return (
     <Box
       maxW="1200px"
@@ -47,8 +51,14 @@ export function LeadSection() {
         >
           <Image
             src={marosik}
+            onClick={() => {
+              setSat(sat+1)
+            }}
             alt="Maros Tomášov"
             w={{ base: "100%", md: "350px" }}
+            style={{
+              filter: saturation,
+            }}
           />
         </Box>
         <Text className="image-caption">*Najlepší človek na svete</Text>
