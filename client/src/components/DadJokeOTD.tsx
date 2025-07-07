@@ -18,8 +18,10 @@ export function DadJoke() {
             top: "1%",
             left: "50%",
             transform: 'translateX(-50%)',
-            color: "white"
+            color: "white",
+            width: '90%'
         }}>
+            Dad Joke:
             {joke ? joke : ''}
         </Heading>
     )
