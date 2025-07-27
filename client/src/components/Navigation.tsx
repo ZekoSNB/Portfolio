@@ -1,11 +1,12 @@
 import { FaInstagram, FaLinkedin, FaYoutube, FaGithub } from 'react-icons/fa';
+import { SiApplemusic } from "react-icons/si";
 import { Box } from '@chakra-ui/react';
 
 export function Navigation() {
   return (
      <Box display={"grid"} gridTemplateColumns={{
-          base: "repeat(4, 1fr)",
-          md: "repeat(8, 1fr)",
+          base: "repeat(3, 1fr)",
+          md: "repeat(9, 1fr)",
         }} alignItems={"center"} justifyContent={"center"} mt={4} columnGap={4} rowGap={8}>
             <a href="https://instagram.com/_ozeko"  target="_blank" rel="noopener noreferrer">
               <FaInstagram className='social-icon' title='Instagram' color="white" size={48} />
@@ -30,6 +31,9 @@ export function Navigation() {
             </a>
             <a href="https://www.tiktok.com/@_ozeko" target="_blank" rel="noopener noreferrer">
               <img className='social-icon' src="/tiktok.svg" alt='tiktok' width={48} height={48} title='TikTok' />
+            </a>
+            <a href="https://music.apple.com/sk/playlist/let-me-chill-d/pl.u-e98lGdEuamj6lM5" target='_blank' rel='noopener noreferrer'>
+             <SiApplemusic className='social-icon' color='white' title='Skús či nájdeš čo chceš' size={44}/>
             </a>
     </Box>
   )
