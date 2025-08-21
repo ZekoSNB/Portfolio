@@ -5,7 +5,7 @@ export function Character() {
         physical: {
             vytrvalosť: 5,
             sila: 65,
-            staroba: 17
+            staroba: 18
         },
         mental: {
             múdrosť: 60,
