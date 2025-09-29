@@ -1,23 +1,22 @@
-import './styles/App.css';
-import './styles/global.css';
-import { Title } from './utils/Title';
-import { CursorTrail } from './components/CursorTrail';
-import { Hero } from './pages/Hero';
-import { LeadSection } from './pages/Lead';
-import { DadJoke } from './components/DadJokeOTD';
+import "./styles/App.css";
+import "./styles/global.css";
+import { Title } from "./utils/Title";
+import { CursorTrail } from "./components/CursorTrail";
+import { Hero } from "./pages/Hero";
+import { LeadSection } from "./pages/Lead";
+import { DadJoke } from "./components/DadJokeOTD";
 
 function App() {
   Title();
-  
+
   return (
     <>
       <CursorTrail />
-      <DadJoke />      
+      <DadJoke />
       <Hero />
       <LeadSection />
     </>
-  )
+  );
 }
 
 export default App;
-

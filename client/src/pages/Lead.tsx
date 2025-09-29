@@ -1,3 +1,4 @@
+// LuGamepad2
 import { Image, Box, Text, Tabs } from "@chakra-ui/react";
 import marosik from "../assets/images/maros-tomasov.webp";
 import { LuUser, LuBadgeInfo, LuHistory } from "react-icons/lu";
@@ -7,10 +8,11 @@ import { AboutMe } from "./tabs_content/AboutMe";
 import "../styles/Lead.css";
 import { useState } from "react";
 
+
 export function LeadSection() {
   const [sat, setSat] = useState<number>(0);
   const levels: number[] = [1.8, 0, 250, 3, 4, 0.3, 2000, 0.2];
-  let saturation = `saturate(${levels[sat%8]})`;
+  const saturation = `saturate(${levels[sat % 8]})`;
   return (
     <Box
       maxW="1200px"
@@ -52,7 +54,7 @@ export function LeadSection() {
           <Image
             src={marosik}
             onClick={() => {
-              setSat(sat+1)
+              setSat(sat + 1);
             }}
             alt="Maros Tomášov"
             w={{ base: "100%", md: "350px" }}
@@ -84,7 +86,7 @@ export function LeadSection() {
               }}
             >
               <LuHistory />
-              History
+              História
             </Tabs.Trigger>
             <Tabs.Trigger
               value="character"
@@ -94,7 +96,7 @@ export function LeadSection() {
               }}
             >
               <LuUser />
-              Characteristics
+              Charakter
             </Tabs.Trigger>
             <Tabs.Trigger
               value="aboutme"
@@ -104,8 +106,18 @@ export function LeadSection() {
               }}
             >
               <LuBadgeInfo />
-              About Me
+              O mne
             </Tabs.Trigger>
+            {/* <Tabs.Trigger
+              value="dinogame"
+              _selected={{
+                color: "white",
+                borderBottom: "2px solid white",
+              }}
+            >
+              <LuGamepad2 />
+              Zahraj sa
+            </Tabs.Trigger> */}
           </Tabs.List>
           <Box mt={4} width="100%">
             <Tabs.Content value="history">
@@ -123,6 +135,9 @@ export function LeadSection() {
                 <AboutMe />
               </Box>
             </Tabs.Content>
+            {/* <Tabs.Content value="dinogame">
+              <Box className="tab-content-wrapper"></Box>
+            </Tabs.Content> */}
           </Box>
         </Tabs.Root>
       </Box>

@@ -4,7 +4,6 @@ export function Title() {
     useEffect(() => {
         const originalTitle = document.title;
         const blurMessages = [
-          "DŠ <3",
           "Silence is golden",
           "GVBN </3",
           "Does god exist?",
