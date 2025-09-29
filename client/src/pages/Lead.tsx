@@ -1,16 +1,17 @@
 import { Image, Box, Text, Tabs } from "@chakra-ui/react";
 import marosik from "../assets/images/maros-tomasov.webp";
-import { LuUser, LuBadgeInfo, LuHistory } from "react-icons/lu";
+import { LuUser, LuBadgeInfo, LuHistory, LuGamepad2 } from "react-icons/lu";
 import { History } from "./tabs_content/History";
 import { Character } from "./tabs_content/Character";
 import { AboutMe } from "./tabs_content/AboutMe";
+//import { Dino } from "../components/Dino.tsx";
 import "../styles/Lead.css";
 import { useState } from "react";
 
 export function LeadSection() {
   const [sat, setSat] = useState<number>(0);
   const levels: number[] = [1.8, 0, 250, 3, 4, 0.3, 2000, 0.2];
-  let saturation = `saturate(${levels[sat%8]})`;
+  const saturation = `saturate(${levels[sat % 8]})`;
   return (
     <Box
       maxW="1200px"
@@ -52,7 +53,7 @@ export function LeadSection() {
           <Image
             src={marosik}
             onClick={() => {
-              setSat(sat+1)
+              setSat(sat + 1);
             }}
             alt="Maros Tomášov"
             w={{ base: "100%", md: "350px" }}
@@ -106,6 +107,16 @@ export function LeadSection() {
               <LuBadgeInfo />
               About Me
             </Tabs.Trigger>
+            <Tabs.Trigger
+              value="dinogame"
+              _selected={{
+                color: "white",
+                borderBottom: "2px solid white",
+              }}
+            >
+              <LuGamepad2 />
+              Zahraj sa
+            </Tabs.Trigger>
           </Tabs.List>
           <Box mt={4} width="100%">
             <Tabs.Content value="history">
@@ -122,6 +133,9 @@ export function LeadSection() {
               <Box className="tab-content-wrapper">
                 <AboutMe />
               </Box>
+            </Tabs.Content>
+            <Tabs.Content value="dinogame">
+              <Box className="tab-content-wrapper"></Box>
             </Tabs.Content>
           </Box>
         </Tabs.Root>
