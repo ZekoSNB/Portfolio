@@ -1,6 +1,7 @@
+// LuGamepad2
 import { Image, Box, Text, Tabs } from "@chakra-ui/react";
 import marosik from "../assets/images/maros-tomasov.webp";
-import { LuUser, LuBadgeInfo, LuHistory, LuGamepad2 } from "react-icons/lu";
+import { LuUser, LuBadgeInfo, LuHistory } from "react-icons/lu";
 import { History } from "./tabs_content/History";
 import { Character } from "./tabs_content/Character";
 import { AboutMe } from "./tabs_content/AboutMe";
