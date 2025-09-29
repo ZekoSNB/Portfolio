@@ -5,7 +5,6 @@ import { CursorTrail } from "./components/CursorTrail";
 import { Hero } from "./pages/Hero";
 import { LeadSection } from "./pages/Lead";
 import { DadJoke } from "./components/DadJokeOTD";
-import ChromeDinoGame from "react-chrome-dino";
 
 function App() {
   Title();
