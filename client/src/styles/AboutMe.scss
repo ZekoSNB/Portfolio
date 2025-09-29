@@ -1,0 +1,14 @@
+.mt-text {
+    color: white;
+    line-height: 2;
+    font-size: 17px;
+    text-align: justify;
+    margin-bottom: 50px;
+
+    &--italic {
+        font-style: italic;
+    }
+    &__wrapper:hover  {
+
+    }
+}

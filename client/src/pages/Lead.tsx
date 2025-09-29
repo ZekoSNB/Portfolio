@@ -4,9 +4,9 @@ import { LuUser, LuBadgeInfo, LuHistory, LuGamepad2 } from "react-icons/lu";
 import { History } from "./tabs_content/History";
 import { Character } from "./tabs_content/Character";
 import { AboutMe } from "./tabs_content/AboutMe";
-//import { Dino } from "../components/Dino.tsx";
 import "../styles/Lead.css";
 import { useState } from "react";
+
 
 export function LeadSection() {
   const [sat, setSat] = useState<number>(0);
@@ -85,7 +85,7 @@ export function LeadSection() {
               }}
             >
               <LuHistory />
-              History
+              História
             </Tabs.Trigger>
             <Tabs.Trigger
               value="character"
@@ -95,7 +95,7 @@ export function LeadSection() {
               }}
             >
               <LuUser />
-              Characteristics
+              Charakter
             </Tabs.Trigger>
             <Tabs.Trigger
               value="aboutme"
@@ -105,9 +105,9 @@ export function LeadSection() {
               }}
             >
               <LuBadgeInfo />
-              About Me
+              O mne
             </Tabs.Trigger>
-            <Tabs.Trigger
+            {/* <Tabs.Trigger
               value="dinogame"
               _selected={{
                 color: "white",
@@ -116,7 +116,7 @@ export function LeadSection() {
             >
               <LuGamepad2 />
               Zahraj sa
-            </Tabs.Trigger>
+            </Tabs.Trigger> */}
           </Tabs.List>
           <Box mt={4} width="100%">
             <Tabs.Content value="history">
@@ -134,9 +134,9 @@ export function LeadSection() {
                 <AboutMe />
               </Box>
             </Tabs.Content>
-            <Tabs.Content value="dinogame">
+            {/* <Tabs.Content value="dinogame">
               <Box className="tab-content-wrapper"></Box>
-            </Tabs.Content>
+            </Tabs.Content> */}
           </Box>
         </Tabs.Root>
       </Box>
