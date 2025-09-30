@@ -1,13 +1,12 @@
-// LuGamepad2
 import { Image, Box, Text, Tabs } from "@chakra-ui/react";
 import marosik from "../assets/images/maros-tomasov.webp";
-import { LuUser, LuBadgeInfo, LuHistory } from "react-icons/lu";
+import { LuUser, LuBadgeInfo, LuHistory, LuGamepad2 } from "react-icons/lu";
 import { History } from "./tabs_content/History";
 import { Character } from "./tabs_content/Character";
 import { AboutMe } from "./tabs_content/AboutMe";
+import TicTacToe from "./tabs_content/TicTacToe";
 import "../styles/Lead.css";
 import { useState } from "react";
-
 
 export function LeadSection() {
   const [sat, setSat] = useState<number>(0);
@@ -105,10 +104,13 @@ export function LeadSection() {
                 borderBottom: "2px solid white",
               }}
             >
-              <LuBadgeInfo />
-              O mne
+              <LuBadgeInfo />O mne
             </Tabs.Trigger>
-            {/* <Tabs.Trigger
+            <Tabs.Trigger
+              display={{
+                base: "none",
+                md: "flex",
+              }}
               value="dinogame"
               _selected={{
                 color: "white",
@@ -117,7 +119,7 @@ export function LeadSection() {
             >
               <LuGamepad2 />
               Zahraj sa
-            </Tabs.Trigger> */}
+            </Tabs.Trigger>
           </Tabs.List>
           <Box mt={4} width="100%">
             <Tabs.Content value="history">
@@ -135,9 +137,11 @@ export function LeadSection() {
                 <AboutMe />
               </Box>
             </Tabs.Content>
-            {/* <Tabs.Content value="dinogame">
-              <Box className="tab-content-wrapper"></Box>
-            </Tabs.Content> */}
+            <Tabs.Content value="dinogame">
+              <Box className="tab-content-wrapper">
+                <TicTacToe />
+              </Box>
+            </Tabs.Content>
           </Box>
         </Tabs.Root>
       </Box>
