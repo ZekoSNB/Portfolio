@@ -1,8 +1,9 @@
-import { useState, useMemo } from "react";
-import { Box, Button, Text } from "@chakra-ui/react";
+import { useState } from "react";
+import { Box, Button } from "@chakra-ui/react";
 import Cross from "../../assets/tictactoe/cross.svg";
 import Circle from "../../assets/tictactoe/circle.svg";
 import Border from "../../assets/tictactoe/border.svg";
+import "../../styles/TicTacToe.css";
 
 type playFieldType = {
   [pos: number]: "O" | "X" | "N";
@@ -35,6 +36,7 @@ function TicTacToe() {
             transform: "translateY(-4px)",
           }}
           onClick={() => {
+            alert("sorry nie je dorobena mechanika :(");
             setSinglePlayer(true);
             setStarted(true);
           }}
@@ -63,7 +65,7 @@ function TicTacToe() {
     <Box
       display={"grid"}
       gridTemplateColumns={"repeat(3,1fr)"}
-      gap="6"
+      gap="0.2"
       position={"relative"}
       w={"65%"}
       h={"65%"}
@@ -135,7 +137,7 @@ function TicTacToe() {
                 })
               }
             >
-              {renderImg(pos, value)}
+              {renderImg(pos, value, move)}
             </button>
           </Box>
         );
@@ -145,7 +147,7 @@ function TicTacToe() {
 }
 
 type setMoveProps = {
-  pos: number; // position in playfield
+  pos: number;
   value: "X" | "O" | "N";
   setValue: React.Dispatch<React.SetStateAction<playFieldType>>;
   move: number;
@@ -164,9 +166,19 @@ function setPlayerMove(props: setMoveProps) {
   return;
 }
 
-function renderImg(pos: string, value: string) {
+function renderImg(pos: string, value: string, move: number) {
   return value == "N" ? (
-    <p color="white">kokot</p>
+    <Box
+      height={"100%"}
+      w={"100%"}
+      position={"relative"}
+      className={"game__image"}
+    >
+      <img
+        className="game__image--hover"
+        src={move % 2 === 0 ? `${Cross}` : `${Circle}`}
+      />
+    </Box>
   ) : (
     <img key={pos} src={value == "X" ? Cross : Circle} />
   );

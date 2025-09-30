@@ -4,54 +4,37 @@
   overflow-x: auto;
   padding: 1rem 0;
   margin: 0;
-  display: -webkit-box;
-  display: -ms-flexbox;
   display: flex;
-  -webkit-box-align: stretch;
-      -ms-flex-align: stretch;
-          align-items: stretch;
-  cursor: -webkit-grab;
+  align-items: stretch;
   cursor: grab;
 }
-
 .timeline-container:active {
-  cursor: -webkit-grabbing;
   cursor: grabbing;
 }
-
 .timeline-container::-webkit-scrollbar {
   height: 6px;
 }
-
 .timeline-container::-webkit-scrollbar-track {
   background: rgba(255, 255, 255, 0.1);
   border-radius: 4px;
 }
-
 .timeline-container::-webkit-scrollbar-thumb {
   background: rgba(255, 255, 255, 0.3);
   border-radius: 4px;
 }
-
 .timeline-container::-webkit-scrollbar-thumb:hover {
   background: rgba(255, 255, 255, 0.4);
 }
 
 .timeline-wrapper {
-  display: -webkit-inline-box;
-  display: -ms-inline-flexbox;
   display: inline-flex;
   padding: 0 1rem;
   gap: 1.5rem;
-  min-width: -webkit-min-content;
   min-width: -moz-min-content;
   min-width: min-content;
   height: 100%;
-  -webkit-box-align: stretch;
-      -ms-flex-align: stretch;
-          align-items: stretch;
+  align-items: stretch;
 }
-
 @media (max-width: 768px) {
   .timeline-wrapper {
     padding: 0 1rem;
@@ -69,29 +52,15 @@
   border: 1px solid rgba(255, 255, 255, 0.1);
   -webkit-backdrop-filter: blur(10px);
           backdrop-filter: blur(10px);
-  -webkit-transition: -webkit-transform 0.3s ease;
-  transition: -webkit-transform 0.3s ease;
   transition: transform 0.3s ease;
-  transition: transform 0.3s ease, -webkit-transform 0.3s ease;
-  -ms-flex-negative: 0;
-      flex-shrink: 0;
-  display: -webkit-box;
-  display: -ms-flexbox;
+  flex-shrink: 0;
   display: flex;
-  -webkit-box-orient: vertical;
-  -webkit-box-direction: normal;
-      -ms-flex-direction: column;
-          flex-direction: column;
-  -webkit-box-pack: start;
-      -ms-flex-pack: start;
-          justify-content: flex-start;
+  flex-direction: column;
+  justify-content: flex-start;
 }
-
 .timeline-item:hover {
-  -webkit-transform: translateY(-5px);
-          transform: translateY(-5px);
+  transform: translateY(-5px);
 }
-
 @media (max-width: 768px) {
   .timeline-item {
     width: 60vw;
@@ -114,22 +83,17 @@
   max-height: 150px;
   margin: 0;
 }
-
 .timeline-description::-webkit-scrollbar {
   width: 4px;
 }
-
 .timeline-description::-webkit-scrollbar-track {
   background: rgba(255, 255, 255, 0.1);
   border-radius: 4px;
 }
-
 .timeline-description::-webkit-scrollbar-thumb {
   background: rgba(255, 255, 255, 0.3);
   border-radius: 4px;
 }
-
 .timeline-description::-webkit-scrollbar-thumb:hover {
   background: rgba(255, 255, 255, 0.4);
-}
-/*# sourceMappingURL=History.css.map */
+}/*# sourceMappingURL=History.css.map */
