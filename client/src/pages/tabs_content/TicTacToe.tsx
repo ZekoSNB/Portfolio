@@ -42,9 +42,9 @@ function TicTacToe() {
     if (checkDraw(playField) && started) {
       alert("Remíza!");
       resetGame(playField, setPlayField);
-      return; 
+      return;
     }
-  }, [playField]);
+  }, [playField, started]);
 
   if (!started) {
     return (
@@ -81,6 +81,7 @@ function TicTacToe() {
       </Box>
     );
   }
+  console.log(singlePlayer);
   return (
     <Box
       display={"grid"}
@@ -169,11 +170,14 @@ function TicTacToe() {
 
 export default TicTacToe;
 
-function resetGame(playField: playFieldType, setPlayField: React.Dispatch<React.SetStateAction<playFieldType>>) {
+function resetGame(
+  playField: playFieldType,
+  setPlayField: React.Dispatch<React.SetStateAction<playFieldType>>,
+) {
   setPlayField({
     ...playField,
     [1]: "N",
-    [2]: "N", 
+    [2]: "N",
     [3]: "N",
     [4]: "N",
     [5]: "N",
@@ -184,12 +188,9 @@ function resetGame(playField: playFieldType, setPlayField: React.Dispatch<React.
   });
 }
 
-
-
 function checkDraw(playField: playFieldType) {
-  return Object.values(playField).every(value => value !== "N");
+  return Object.values(playField).every((value) => value !== "N");
 }
-
 
 function checkWin(playField: playFieldType) {
   const winCombinations = [
@@ -206,10 +207,13 @@ function checkWin(playField: playFieldType) {
   for (const combination of winCombinations) {
     const [a, b, c] = combination;
 
-    const isNotEmpty = playField[a] !== "N" && playField[b] !== "N" && playField[c] !== "N";
-    const isWin = playField[a] && playField[a] === playField[b] && playField[a] === playField[c];
+    const isNotEmpty =
+      playField[a] !== "N" && playField[b] !== "N" && playField[c] !== "N";
+    const isWin =
+      playField[a] &&
+      playField[a] === playField[b] &&
+      playField[a] === playField[c];
     if (isNotEmpty && isWin) return true;
-    
   }
   return false;
 }
@@ -244,4 +248,3 @@ function renderImg(pos: string, value: string, move: number) {
     <img key={pos} src={value == "X" ? Cross : Circle} />
   );
 }
-
