@@ -1,10 +1,11 @@
 // LuGamepad2
 import { Image, Box, Text, Tabs } from "@chakra-ui/react";
 import marosik from "../assets/images/maros-tomasov.webp";
-import { LuUser, LuBadgeInfo, LuHistory } from "react-icons/lu";
+import { LuUser, LuBadgeInfo, LuHistory, LuEye } from "react-icons/lu";
 import { History } from "./tabs_content/History";
 import { Character } from "./tabs_content/Character";
 import { AboutMe } from "./tabs_content/AboutMe";
+import { Questions } from "./tabs_content/Questions";
 import "../styles/Lead.css";
 import { useState } from "react";
 
@@ -108,6 +109,16 @@ export function LeadSection() {
               <LuBadgeInfo />
               O mne
             </Tabs.Trigger>
+            <Tabs.Trigger
+              value="questions"
+              _selected={{
+                color: "white",
+                borderBottom: "2px solid white",
+              }}
+            >
+              <LuEye />
+              Zamyslenie sa
+            </Tabs.Trigger>
             {/* <Tabs.Trigger
               value="dinogame"
               _selected={{
@@ -133,6 +144,11 @@ export function LeadSection() {
             <Tabs.Content value="aboutme">
               <Box className="tab-content-wrapper">
                 <AboutMe />
+              </Box>
+            </Tabs.Content>
+            <Tabs.Content value="questions">
+              <Box className="tab-content-wrapper">
+                <Questions />
               </Box>
             </Tabs.Content>
             {/* <Tabs.Content value="dinogame">
