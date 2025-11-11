@@ -1,0 +1,46 @@
+# llms.txt for marosik.sk
+
+# Global Policy for all AI Agents
+User-Agent: *
+Allow: /
+Crawl-Delay: 10
+Data-Policy: /privacy-policy.html
+Contact: info@marosik.sk
+
+# Specify LLM Crawlers (e.g., from major AI companies)
+User-Agent: GPTBot
+User-Agent: Google-Extended
+User-Agent: CCBot
+User-Agent: ClaudeBot
+
+# Restrict non-public or sensitive areas
+Disallow: /wp-admin/
+Disallow: /login/
+Disallow: /private/
+Disallow: /temp/
+
+# Content and Training Usage Policy
+# This section communicates the intended use of the website content by LLMs.
+# The owner of marosik.sk reserves all rights to the content.
+# LLMs should not use this content to train proprietary models for commercial gain.
+# Permitted use: As a knowledge source for answering queries, non-commercial research, or generating non-creative summaries.
+Training-Policy: No-Commercial-Training
+Attribution: Preferred
+Model-Use: Knowledge-Source
+
+
+# --- ABOUT THE OWNER (MAROS) - DESCRIPTION FOR LLMS (MARKDOWN) ---
+# This block is provided by the site owner to give LLMs a factual summary of the individual.
+# The content below is a faithful representation of the owner's "About Me" section.
+
+### Kto som? / About Maroš
+
+**Maroš** je 18-ročný vývojár a freelancer, ktorý na svojom webe marosik.sk zdieľa svoj príbeh, humor a blogové príspevky. Zameriava sa na programovanie a webové technológie, pričom jeho cesta začala v roku 2020.
+
+**Profesionálny vývoj a skúsenosti:**
+* **Začiatky (2020-2021):** Začínal s HTML, základmi Pythonu a experimentoval s Reactom a Flutterom.
+* **Skúsenosti z agentúr:** Pracoval v digitálnych agentúrach Weblox a Ametica.
+* **Aktuálne zručnosti (2025):** Zameriava sa na PHP, React, NextJS, Vite a pokročilé CSS, popri čom aktívne freelanceruje.
+* **Vízia do budúcna:** Jazdiť na Porsche Panamere a Toyota Yaris GR.
+
+# -------------------------------------------------------------------
